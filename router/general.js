@@ -1,5 +1,5 @@
 const express = require('express');
-let books = require("./booksdb.js");
+let books = require("./booksDB.js");
 let isValid = require("./auth_users.js").isValid;
 let users = require("./auth_users.js").users;
 const public_users = express.Router();
@@ -88,6 +88,7 @@ public_users.get('/review/:isbn',function (req, res) {
     //Write your code here
     const ISBN = req.params.isbn;
     res.send(books[ISBN].reviews)
+    console.log(ISBN)
 });
 
 // Task 10
